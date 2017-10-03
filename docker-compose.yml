@@ -1,0 +1,9 @@
+web:
+  build: .
+  command: npm run start
+  volumes:
+    - .:/var/app
+  ports:
+    - "5000:5000"
+  environment:
+    - API_SECRET=secret
