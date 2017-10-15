@@ -5,4 +5,5 @@ COPY . /var/app
 WORKDIR /var/app
 RUN npm install
 
+EXPOSE 5000
 CMD npm run start
