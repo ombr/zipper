@@ -4,6 +4,7 @@ archiver = require('archiver')
 Stream = require('stream')
 superagent = require('superagent')
 async = require('async')
+Throttle = require('throttle')
 
 http.createServer((request, response)->
     response.writeHead(200, {
@@ -16,7 +17,7 @@ http.createServer((request, response)->
 
     q = async.queue((task, callback)->
       console.log task.url
-      download = superagent.get(task.url)
+      download = superagent.get(task.url).pipe(new Throttle(500*1024))
       zip.append(download, { name: task.name })
       download.on 'end', ->
         console.log '.'
