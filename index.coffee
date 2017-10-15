@@ -12,11 +12,11 @@ http.createServer((request, response)->
 
     zip = archiver('zip')
     zip.pipe(response)
-    for i in [1..10]
+    for i in [1..100]
       zip
         .append(
-          superagent.get('http://vjs.zencdn.net/v/oceans.mp4')
-          , { name: "ocean#{i}.mp4" }
+          superagent.get('https://picsum.photos/1000/1000')
+          , { name: "image#{i}.jpg" }
         )
     zip.finalize()
 
