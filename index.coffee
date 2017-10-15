@@ -12,7 +12,7 @@ http.createServer((request, response)->
 
     zip = archiver('zip')
     zip.pipe(response)
-    for i in [1..2]
+    for i in [1..10]
       zip
         .append(
           superagent.get('http://vjs.zencdn.net/v/oceans.mp4')
