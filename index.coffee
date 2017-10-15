@@ -12,10 +12,10 @@ http.createServer((request, response)->
 
     zip = archiver('zip')
     zip.pipe(response)
-    for i in [1..100]
+    for i in [1..1]
       zip
         .append(
-          superagent.get('https://picsum.photos/1000/1000')
+          superagent.get("https://assets.imgix.net/examples/leaves.jpg?w=400#{i}&dl=medium.jpg")
           , { name: "image#{i}.jpg" }
         )
     zip.finalize()
