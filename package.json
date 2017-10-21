@@ -5,16 +5,22 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require coffeescript/register \"test/**/*.{js,coffee}\"",
+    "watch": "mocha --require coffeescript/register --watch --watch-extensions js,coffee \"test/**/*.{js,coffee}\""
   },
-  "author": "",
+  "author": "Luc Boissaye",
   "license": "ISC",
   "dependencies": {
     "archiver": "^2.0.3",
     "coffeescript": "^2.0.1",
+    "jsonwebtoken": "^8.1.0",
     "request": "^2.83.0",
     "stream": "0.0.2",
     "superagent": "^3.6.2",
     "throttle": "^1.0.3"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "mocha": "^4.0.1"
   }
 }
