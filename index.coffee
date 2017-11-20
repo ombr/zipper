@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded(extended: true))
 app.use(bodyParser.json())
 app.post '/', (req, res)->
   token = req.body.token
-  jwt.verify(token, process.env.API_SECRET, {}, (err, decoded)->
+  jwt.verify(token, process.env.API_SECRET || 'secret', {}, (err, decoded)->
     if err
       res.status 401
       res.send 'Invalid JWT token'
