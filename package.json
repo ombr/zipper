@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "archiver": "^2.0.3",
+    "async": "^2.6.0",
     "body-parser": "^1.18.2",
     "coffeescript": "^2.0.1",
     "express": "^4.16.2",
