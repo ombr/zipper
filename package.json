@@ -12,7 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "archiver": "^2.0.3",
+    "body-parser": "^1.18.2",
     "coffeescript": "^2.0.1",
+    "express": "^4.16.2",
     "jsonwebtoken": "^8.1.0",
     "request": "^2.83.0",
     "stream": "0.0.2",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "assert": "^1.4.1",
-    "mocha": "^4.0.1"
+    "mocha": "^4.0.1",
+    "unzip": "^0.1.11"
   }
 }

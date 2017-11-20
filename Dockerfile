@@ -3,7 +3,7 @@ MAINTAINER Luc Boissaye <luc@boissaye.fr>
 
 COPY . /var/app
 WORKDIR /var/app
-RUN npm install
+RUN npm install --only=production
 
 EXPOSE 5000
 CMD npm run start

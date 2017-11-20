@@ -3,8 +3,16 @@ web:
   command: npm run start
   volumes:
     - .:/var/app
-    - zipper_node_modules:/var/app/node_modules
   ports:
     - "5000:5000"
   environment:
-    - API_SECRET=secret
+    - API_SECRET=zipper
+test:
+  build: .
+  command: npm run test
+  links:
+    - web
+  volumes:
+    - .:/var/app
+  environment:
+    - ZIPPER_URL=http://zipper:zipper@web:5000
